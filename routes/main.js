@@ -2,8 +2,7 @@ const express = require('express');
 const router = express.Router()
 const {login,dashboard} = require('../controllers/main');
 
-router.post('/login',login)
-
-router.get('/dashboard',dashboard)
+router.route('/login').post(login)
+router.route('/dashboard').get(dashboard)
 
 module.exports = router
