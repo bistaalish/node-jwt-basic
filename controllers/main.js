@@ -1,5 +1,5 @@
 
-const CustomAPIError =require('../errors/custom-error')
+const {BadRequestError} =require('../errors/')
 const jwt = require('jsonwebtoken')
 const login =  async (req, res) => {
     // res.send('Fake Login/Register/Sign Route')
@@ -11,7 +11,7 @@ const login =  async (req, res) => {
     const id = new Date().getDate()
     // Joi
     if(!username || !password){
-        throw new CustomAPIError('username or password missing',400) 
+        throw new BadRequestError('username or password missing') 
     }
 
 
